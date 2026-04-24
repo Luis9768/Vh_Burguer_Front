@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./header.module.css";
 
 const Header = () => {
@@ -11,10 +12,10 @@ const Header = () => {
         />
 
         <nav id={styles.nav_menu}>
-          <a href="">Destaques</a>
-          <a href="">Cardápio</a>
-          <a href="">Unidades</a>
-          <a href="">Login</a>
+          <a href="#destaques">Destaques</a>
+          <a href="#cardapio">Cardápio</a>
+          <a href="#unidades">Unidades</a>
+          <Link href="/login">Login</Link>
         </nav>
         <button id={styles.btn_icon}>
           <img

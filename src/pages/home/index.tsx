@@ -1,62 +1,65 @@
 import Footer from "@/components/footer/footer";
 import Header from "../../components/header/header";
 import styles from "./home.module.css";
+import ListaProduto from "@/components/lista-produto/lista-produto";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <main>
-        <section id={styles.banner}>
-          <div className="banner_container">
-            <h1 id={styles.titulo_banner}>Bem-Vindo ao VH Burguer</h1>
-            <div id={styles.img_banner}>
-              <img
-                src="../imgs/foto_de_hamburgueres.png"
-                alt="logo hamburguer"
-              />
-            </div>
-            <div id={styles.botoes_banner}>
-              <div id={styles.botao_atendente}>
-                <button>Chamar atendente</button>
-              </div>
-              <div id={styles.botao_cardapio}>
-                <button>Ver cardápio</button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id={styles.destaques}>
-          <div id={styles.imagem_a}>
-            <img src="../imgs/mais_pedidos.png" alt="imagem dos mais pedidos" />
-            <div id={styles.textos_imagem_a}>
-              <h3>Os queridinhos da galera</h3>
-              <h2>Mais Pedidos</h2>
-            </div>
-          </div>
-          <div id={styles.imagens_duplas}>
-            <div id={styles.imagem_cima}>
-              <img src="../imgs/muito_bacon.png" alt="a lot of bacon" />
-              <h3>Lanches com</h3>
-              <h2>Muito Bacon</h2>
-            </div>
-            <div id={styles.imagem_baixo}>
-              <img
-                src="../imgs/super_combos.png"
-                alt="imagem dos super combos"
-              />
-              <h3>Se tiver muita fome</h3>
-              <h2>Super Combos</h2>
-            </div>
-          </div>
-        </section>
-        <section id={styles.cardapio}>
-          <h1>Cardápio</h1>
-        </section>
-        <section id={styles.unidade}></section>
-      </main>
-      <Footer />
-    </>
-  );
-};
+            <Header />
+            <main>
+                <section id={styles.banner}>
+                    <div className={`${styles.container_banner} layout_guide`}>
+                        <h1>Bem-vindo ao VH Burguer</h1>
+                        <img src="../imgs/foto_de_hamburgueres.png" alt="Três hamburgueres com carne, queijo, salada e bacon." />
+                        <div id={styles.botoes_banner_hamburguer}>
+                            <button className={styles.btn_atendimento}> Chamar atendente</button>
+                            <button className={styles.btn_cardapio}> Ver cardárpio</button>
+                        </div>
+                    </div>
+                </section>
+                <section id={styles.destaques}>
+                    <div className={`${styles.container_destaques} layout_guide`}>
+                        <article className={styles.card_destaque_mais_pedidos}>
+                            <p>Os queridinhos da galera</p>
+                            <p className={styles.destaque}>mais pedidos</p>
+                        </article>
+                        <div className={styles.cards_direita}>
+                            <article className={styles.card_destaque_muito_bacon}>
+                                <p>Lanches com</p>
+                                <p className={styles.destaque}>muito bacon</p>
+                            </article>
+                            <article className={styles.card_destaque_super_combos}>
+                                <p>Se tiver muita fome</p>
+                                <p className={styles.destaque}>Super combos</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                <section id={styles.cardapio}>
+                    <div className={`${styles.container_cardapio} layout_guide`}>
+                        <h2>Cardápio</h2>
+                        {/* chamar componente da lista */}
+                        <ListaProduto/>
+                    </div>
+                </section>
+                <section id={styles.unidades}>
+                     <div className={`${styles.container_unidades} layout_guide`}>
+                    <div className={styles.texto_unidades}>
+                        <h2>Unidades</h2>
+                        <ul className={styles.lista_unidades}>
+                            <li>Centro - Av. Aurora, 742</li>
+                            <li>Jardim - Av. das Palmeiras, 1280</li>
+                            <li>Norte - Av. Horizonte, 305</li>
+                            <li>Sul - Av. Nova Esperança, 910</li>
+                        </ul>
+                    </div>
+                </div>
+                </section>
+            </main>
+            <Footer />
+</>
+    )
+}
+
 export default Home;
