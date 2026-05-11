@@ -1,7 +1,16 @@
 import Link from "next/link";
 import styles from "./header.module.css";
+import { useState } from "react";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+const[menuAberto, setMenuAberto] = useState(false);
+
+function mostraMenu(){
+  setMenuAberto(!menuAberto)
+  
+}
+
   return (
     <header id={styles.header}>
       <div className={`${styles.container} layout_guide`}>
@@ -11,13 +20,13 @@ const Header = () => {
           id={styles.logo}
         />
 
-        <nav id={styles.nav_menu}>
+        <nav id={styles.nav_menu} className={menuAberto? styles.nav_menu_aberto : styles.nav_menu}>
           <a href="#destaques">Destaques</a>
           <a href="#cardapio">Cardápio</a>
           <a href="#unidades">Unidades</a>
           <Link href="/login">Login</Link>
         </nav>
-        <button id={styles.btn_icon}>
+        <button id={styles.btn_icon} onClick={mostraMenu}>
           <img
             src="../imgs/icon_hamburguer.svg"
             alt="Icone que representa um hamburguer para acessar o menu lateral"

@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
 import "@/styles/globals.css"
 import { Fredoka } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const fredoka = Fredoka({
   variable: "--font-padrao",
@@ -12,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return(
     <main className={fredoka.variable}>
       <Component {...pageProps} />
+      <ToastContainer />
     </main>
   )
 }

@@ -19,7 +19,7 @@
 .detalhes_titulo {
     color: var(--laranja-destaque);
     font-weight: 500;
-    font-size: 60;
+    font-size: var(--tamanho-subtitulo);
     text-transform: uppercase;
 }
 
